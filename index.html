@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,106 @@
 
 </head>
 <body>
-    <main>
-        <h1>this is Home in page</h1>
+    <main class="flex justify-center">
+        <div class="max-w-md shadow m-4 flex flex-col items-center p-4">
+            <!-- information start -->
+            <div class="w-full flex justify-between items-center">
+                <div class="flex justify-center items-center">
+                    <div class="w-12">
+                        <img src="payoo.png" alt="logo">
+                    </div>
+                    <div class="stat p-1">
+                        <div class="stat-value text-2xl">2500</div>
+                        <div class="stat-title">Available Balance</div>
+                    </div>
+                </div>
+                <!-- logout -->
+                 <div class="btn bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full ms-12">Log Out</div>
+            </div>
+
+            <!-- information end -->
+             <div class="divider"></div>
+             <!-- welcome text start -->
+            <div>
+                <h1 class="text-2xl text-black font-bold">Welcome to Payoo!</h1>
+                <p class="stat-title">Enjoy easy and convenient service with us</p>
+            </div>
+             <!-- welcome text end -->
+
+             <!-- buttons start -->
+            <div class="grid grid-cols-3 gap-2">
+                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                    <p>Add Money</p>
+                </div>
+                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                    <p>Cash Out</p>
+                </div>
+                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                    <p class="text-center">Transfer Money</p>
+                </div>
+                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                    <p>Get Bonus</p>
+                </div>
+                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                    <p>Pay Bill</p>
+                </div>
+                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                    <p>Transaction</p>
+                </div>
+
+            </div>
+             <!-- buttons end -->
+              <div class="divider"></div>
+
+            <!-- add money form start -->
+            <div class="w-full">
+                <h3 class="font-bold text-2xl">Add Money</h3>
+                <form class="card-body m-4 shadow-lg">
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Amount to add</span>
+                      </label>
+                      <input type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Password</span>
+                      </label>
+                      <input type="password" placeholder="password" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control mt-2">
+                      <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Add Money</button>
+                    </div>
+                  </form>
+            </div>
+            <!-- add money form end -->
+
+
+            <!-- cash out form start -->
+
+            <!-- cash out form end -->
+
+
+            <!-- transfer form start -->
+
+            <!-- transfer form end -->
+
+
+            <!-- get bonus form start -->
+
+            <!-- get bonus form end -->
+
+
+            <!-- pay bill form start -->
+
+            <!-- pay bill form end -->
+
+
+            <!-- transaction form start -->
+
+            <!-- transaction form end -->
+
+        </div>
     </main>
 </body>
 </html>

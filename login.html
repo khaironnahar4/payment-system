@@ -10,18 +10,30 @@
 </head>
 <body>
     <main class="flex justify-center">
-        <div class="max-w-md shadow m-4">
-            <div><img src="payoo.png" alt="logo"></div>
-            <div>
-                <form action="">
-                    <label class="form-control w-full max-w-xs">
-                        <div class="label">
-                          <span class="label-text">What is your name?</span>
-                        </div>
-                        <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-                      </label>
+        <div class="max-w-md shadow m-4 flex flex-col items-center p-4">
+            <div class="w-20"><img src="payoo.png" alt="logo"></div>
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Mobile Number</span>
+                    </label>
+                    <input type="text" placeholder="Enter your mobile number" class="input input-bordered rounded-full" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Password</span>
+                    </label>
+                    <input type="password" placeholder="password" class="input input-bordered rounded-full" required />
+                    <label class="label">
+                      <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                    </label>
+                  </div>
+                  <div class="form-control mt-6">
+                    <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Login</button>
+                  </div>
                 </form>
-            </div>
+              </div>
         </div>
     </main>
 </body>
