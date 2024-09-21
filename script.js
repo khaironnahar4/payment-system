@@ -56,3 +56,25 @@ document.getElementById("money-transfer-submit-button")
         alert("Wrond pin number")
     }
 })
+
+let totalCoupun = 2;
+// add bonus functionality
+document.getElementById("add-bonus-submit-button")
+.addEventListener("click", function(e){
+    e.preventDefault();
+    const coupun = inputFieldValueById("coupun");
+    
+    if(coupun===1234){
+        if(totalCoupun){
+            const totalAmount = textFieldValueById("total-balance") + 10;
+            document.getElementById("total-balance").innerText = totalAmount;
+            totalCoupun--;
+            document.getElementById("available-bonus").innerText = totalCoupun;
+        }else{
+            alert("You don't have any coupun!")
+        }
+    }else{
+        alert("Wrong coupun number");
+    }
+    
+})
