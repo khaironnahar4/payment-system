@@ -1,3 +1,13 @@
+// function for finding the input field value
+function inputFieldValueById(id){
+    return parseFloat(document.getElementById(id).value);
+}
+
+// function for finding value of text field
+function textFieldValueById(id){
+    return(parseInt(document.getElementById(id).innerText));
+    
+}
 
 // to show the sections
 function showSection(id){

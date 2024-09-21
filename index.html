@@ -18,7 +18,7 @@
                         <img src="payoo.png" alt="logo">
                     </div>
                     <div class="stat p-1">
-                        <div class="stat-value text-2xl">2500</div>
+                        <div id="total-balance" class="stat-value text-2xl">2500</div>
                         <div class="stat-title">Available Balance</div>
                     </div>
                 </div>
@@ -68,16 +68,16 @@
                       <label class="label">
                         <span class="label-text">Amount to add</span>
                       </label>
-                      <input type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
+                      <input id="add-money-amount" type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
                     </div>
                     <div class="form-control">
                       <label class="label">
                         <span class="label-text">Pin Number</span>
                       </label>
-                      <input type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
+                      <input id="add-money-pin-number" type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
                     </div>
                     <div class="form-control mt-2">
-                      <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Add Money</button>
+                      <button id="add-money-submit-button" class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Add Money</button>
                     </div>
                   </form>
             </div>
