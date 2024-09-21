@@ -33,7 +33,7 @@ document.getElementById("cash-out-submit-button")
             alert("You don't have sufficient amount!");
         }
     }else{
-        alert("Wrond pin number")
+        alert("Wrong pin number")
     }
 })
 
@@ -53,12 +53,13 @@ document.getElementById("money-transfer-submit-button")
             alert("You don't have sufficient amount!");
         }
     }else{
-        alert("Wrond pin number")
+        alert("Wrong pin number")
     }
 })
 
-let totalCoupun = 2;
+
 // add bonus functionality
+let totalCoupun = 2;
 document.getElementById("add-bonus-submit-button")
 .addEventListener("click", function(e){
     e.preventDefault();
@@ -77,4 +78,22 @@ document.getElementById("add-bonus-submit-button")
         alert("Wrong coupun number");
     }
     
+})
+
+// pay bill functionality
+document.getElementById("pay-bill-submit-button")
+.addEventListener("click", function(e){
+    e.preventDefault();
+    const amount = inputFieldValueById("pay-bill-amount");
+    const pin = inputFieldValueById("pay-bill-pin");
+    if(pin === 1234){
+        const totalAmount = textFieldValueById("total-balance") ;
+        if(totalAmount>=amount){
+            document.getElementById("total-balance").innerText = totalAmount - amount;
+        }else{
+            alert("You don't have sufficient amount!");
+        }
+    }else{
+        alert("Wrong pin number")
+    }
 })
