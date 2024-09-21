@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <!-- logout -->
-                 <div class="btn bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full ms-12">Log Out</div>
+                 <div id="log-out" class="btn bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full ms-12">Log Out</div>
             </div>
 
             <!-- information end -->
@@ -37,22 +37,22 @@
 
              <!-- buttons start -->
             <div class="grid grid-cols-3 gap-2">
-                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                <div id="add-money-button" class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl cursor-pointer hover:bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] hover:text-white">
                     <p>Add Money</p>
                 </div>
-                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                <div id="cash-out-button" class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl cursor-pointer hover:bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] hover:text-white">
                     <p>Cash Out</p>
                 </div>
-                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                <div id="transfer-money-button" class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl cursor-pointer hover:bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] hover:text-white">
                     <p class="text-center">Transfer Money</p>
                 </div>
-                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                <div id="get-bonus-button" class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl cursor-pointer hover:bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] hover:text-white">
                     <p>Get Bonus</p>
                 </div>
-                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                <div id="pay-bill-button" class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl cursor-pointer hover:bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] hover:text-white">
                     <p>Pay Bill</p>
                 </div>
-                <div class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl">
+                <div id="transaction-button" class="shadow-xl p-4 mt-4 flex justify-center items-center border rounded-xl cursor-pointer hover:bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] hover:text-white">
                     <p>Transaction</p>
                 </div>
 
@@ -61,7 +61,7 @@
               <div class="divider"></div>
 
             <!-- add money form start -->
-            <div class="w-full">
+            <div id="add-money-form" class="hidden w-full">
                 <h3 class="font-bold text-2xl">Add Money</h3>
                 <form class="card-body m-4 shadow-lg">
                     <div class="form-control">
@@ -72,9 +72,9 @@
                     </div>
                     <div class="form-control">
                       <label class="label">
-                        <span class="label-text">Password</span>
+                        <span class="label-text">Pin Number</span>
                       </label>
-                      <input type="password" placeholder="password" class="input input-bordered rounded-full" required />
+                      <input type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
                     </div>
                     <div class="form-control mt-2">
                       <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Add Money</button>
@@ -85,30 +85,147 @@
 
 
             <!-- cash out form start -->
+            <div id="cash-out-form" class="hidden w-full">
+                <h3 class="font-bold text-2xl">Cash Out</h3>
+                <form class="card-body m-4 shadow-lg">
+                    <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Agent Number</span>
+                        </label>
+                        <input type="text" placeholder="Enter 11 digit agent number" class="input input-bordered rounded-full" required />
+                      </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Amount</span>
+                      </label>
+                      <input type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Pin Number</span>
+                      </label>
+                      <input type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control mt-2">
+                      <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Withdraw Money</button>
+                    </div>
+                  </form>
+            </div>
 
             <!-- cash out form end -->
 
 
             <!-- transfer form start -->
+            <div id="transfer-money-form" class="hidden w-full">
+                <h3 class="font-bold text-2xl">Transfer Money</h3>
+                <form class="card-body m-4 shadow-lg">
+                    <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">User Account Number</span>
+                        </label>
+                        <input type="text" placeholder="Enter 11 digit agent number" class="input input-bordered rounded-full" required />
+                      </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Amount</span>
+                      </label>
+                      <input type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Pin Number</span>
+                      </label>
+                      <input type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control mt-2">
+                      <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Send Money</button>
+                    </div>
+                  </form>
+            </div>
 
             <!-- transfer form end -->
 
 
             <!-- get bonus form start -->
+            <div id="bonus-form" class="hidden w-full">
+                <h3 class="font-bold text-2xl">Get Bonus</h3>
+                <form class="card-body m-4 shadow-lg">
+                    <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Enter Bonus Coupun</span>
+                        </label>
+                        <input type="text" placeholder="Enter your coupon" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control mt-2">
+                      <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Get Bonus</button>
+                    </div>
+                  </form>
+            </div>
 
             <!-- get bonus form end -->
 
 
             <!-- pay bill form start -->
+            <div id="pay-bill-form" class="hidden w-full">
+                <h3 class="font-bold text-2xl">Pay Bill</h3>
+                <form class="card-body m-4 shadow-lg">
+                    <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Select to Pay</span>
+                        </label>
+                        <select class="select select-bordered w-full max-w-xs rounded-full">
+                            <option selected disabled>Select back</option>
+                            <option>Electricity Bill</option>
+                            <option>Gas Bill</option>
+                            <option>Wifi Bill</option>
+                          </select>
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Bill Account Number</span>
+                        </label>
+                        <input type="text" placeholder="Enter account number" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Amount to Pay</span>
+                      </label>
+                      <input type="text" placeholder="Enter your amount to pay" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control">
+                      <label class="label">
+                        <span class="label-text">Pin Number</span>
+                      </label>
+                      <input type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
+                    </div>
+                    <div class="form-control mt-2">
+                      <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Pay Now</button>
+                    </div>
+                  </form>
+            </div>
 
             <!-- pay bill form end -->
 
 
             <!-- transaction form start -->
+            <div id="transaction-form" class="w-full">
+                <h3 class="font-bold text-2xl">Transaction History</h3>
+                <!-- cards of transaction -->
+                <div class="card border m-4 shadow-lg">
+                    <div class="p-4">
+                      <h3 class="card-title text-lg">Electricity bill</h3>
+                      <p class="text-sm">Today 09:19 AM</p>
+                    </div>
+                  </div>
+               
+            </div>
 
             <!-- transaction form end -->
 
         </div>
     </main>
+    <script src="utilities.js"></script>
+    <script src="sectionFeature.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
