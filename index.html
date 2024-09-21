@@ -98,16 +98,16 @@
                       <label class="label">
                         <span class="label-text">Amount</span>
                       </label>
-                      <input type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
+                      <input id="cash-out-amount" type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
                     </div>
                     <div class="form-control">
                       <label class="label">
                         <span class="label-text">Pin Number</span>
                       </label>
-                      <input type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
+                      <input id="cash-out-pin" type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
                     </div>
                     <div class="form-control mt-2">
-                      <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Withdraw Money</button>
+                      <button id="cash-out-submit-button" class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Withdraw Money</button>
                     </div>
                   </form>
             </div>
@@ -123,23 +123,24 @@
                         <label class="label">
                           <span class="label-text">User Account Number</span>
                         </label>
-                        <input type="text" placeholder="Enter 11 digit agent number" class="input input-bordered rounded-full" required />
+                        <input id="money-transfer-number" type="text" placeholder="Enter 11 digit agent number" class="input input-bordered rounded-full" required />
                       </div>
                     <div class="form-control">
                       <label class="label">
                         <span class="label-text">Amount</span>
                       </label>
-                      <input type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
+                      <input id="money-transfer-amount" type="text" placeholder="Enter your amount" class="input input-bordered rounded-full" required />
                     </div>
                     <div class="form-control">
                       <label class="label">
                         <span class="label-text">Pin Number</span>
                       </label>
-                      <input type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
+                      <input id="money-transfer-pin" type="password" placeholder="Enter you pin number" class="input input-bordered rounded-full" required />
                     </div>
                     <div class="form-control mt-2">
-                      <button class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Send Money</button>
+                      <button id="money-transfer-submit-button" class="btn btn-primary bg-gradient-to-r from-[#5DD9E3] to-[#0050B4] text-white rounded-full">Send Money</button>
                     </div>
+                    <p id="money-transfer-confirmation" class="font-bold text-red-400"></p>
                   </form>
             </div>
 
