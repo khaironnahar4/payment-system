@@ -9,10 +9,28 @@ document.getElementById("add-money-submit-button")
     e.preventDefault();
     const amount = inputFieldValueById("add-money-amount");
     const pin = inputFieldValueById("add-money-pin-number");
-    
+    if(isNaN(amount)) return alert("Please enter a valid amount");
     if(pin===1234){
         const totalAmount = textFieldValueById("total-balance") + amount;
         document.getElementById("total-balance").innerText = totalAmount;
+
+        // transaction created
+        const div = document.createElement("div");
+        div.classList.add("card", "border", "m-4", "shadow-lg");
+
+        // date
+        const d = new Date();
+        div.innerHTML = `
+            <div class="p-4">
+              <h3 class="card-title text-lg">Add Money</h3>
+              <p>${amount}tk added. New balance ${totalAmount+amount}.</p>
+              <p class="text-sm">${d.getMonth()}/${d.getDate()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}</p>
+            </div>
+            `
+        
+        const transactionDiv = document.getElementById("transaction-container");
+        transactionDiv.insertBefore(div, transactionDiv.children[0]);
+
     }else{
         alert("Wrong pin number");
     }
@@ -26,11 +44,32 @@ document.getElementById("cash-out-submit-button")
     const amount = inputFieldValueById("cash-out-amount");
     const pin = inputFieldValueById("cash-out-pin");
     if(pin === 1234){
-        const totalAmount = textFieldValueById("total-balance") ;
-        if(totalAmount>=amount){
-            document.getElementById("total-balance").innerText = totalAmount - amount;
+        if(isNaN(amount)){
+            alert("Please enter a valid amount");
         }else{
-            alert("You don't have sufficient amount!");
+            const totalAmount = textFieldValueById("total-balance") ;
+            if(totalAmount>=amount){
+                document.getElementById("total-balance").innerText = totalAmount - amount;
+            }else{
+                alert("You don't have sufficient amount!");
+            }
+
+        // transaction created
+        const div = document.createElement("div");
+        div.classList.add("card", "border", "m-4", "shadow-lg");
+
+        // date
+        const d = new Date();
+        div.innerHTML = `
+            <div class="p-4">
+              <h3 class="card-title text-lg">Cash Out</h3>
+              <p>${amount}tk withdraw. New balance ${totalAmount-amount}.</p>
+              <p class="text-sm">${d.getMonth()}/${d.getDate()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}</p>
+            </div>
+            `
+        
+        const transactionDiv = document.getElementById("transaction-container");
+        transactionDiv.insertBefore(div, transactionDiv.children[0]);
         }
     }else{
         alert("Wrong pin number")
@@ -45,12 +84,33 @@ document.getElementById("money-transfer-submit-button")
     const pin = inputFieldValueById("money-transfer-pin");
     if(pin === 1234){
         const totalAmount = textFieldValueById("total-balance") ;
-        if(totalAmount>=amount){
-            document.getElementById("total-balance").innerText = totalAmount - amount;
-            const number =  inputFieldValueById("money-transfer-number");
-            document.getElementById("money-transfer-confirmation").innerText = `${amount}Tk has been transfered to ${number}. `
+        if(isNaN(amount)){
+            alert("Please enter a valid amount")
         }else{
-            alert("You don't have sufficient amount!");
+            if(totalAmount>=amount){
+                document.getElementById("total-balance").innerText = totalAmount - amount;
+                const number =  inputFieldValueById("money-transfer-number");
+                document.getElementById("money-transfer-confirmation").innerText = `${amount}Tk has been transfered to ${number}. `
+
+                // transaction created
+                const div = document.createElement("div");
+                div.classList.add("card", "border", "m-4", "shadow-lg");
+
+                // date
+                const d = new Date();
+                div.innerHTML = `
+                    <div class="p-4">
+                    <h3 class="card-title text-lg">Money Transfered</h3>
+                    <p>${amount}tk transfered. New balance ${totalAmount-amount}.</p>
+                    <p class="text-sm">${d.getMonth()}/${d.getDate()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}</p>
+                    </div>
+                    `
+                
+                const transactionDiv = document.getElementById("transaction-container");
+                transactionDiv.insertBefore(div, transactionDiv.children[0]);
+            }else{
+                alert("You don't have sufficient amount!");
+            }
         }
     }else{
         alert("Wrong pin number")
@@ -71,6 +131,23 @@ document.getElementById("add-bonus-submit-button")
             document.getElementById("total-balance").innerText = totalAmount;
             totalCoupun--;
             document.getElementById("available-bonus").innerText = totalCoupun;
+
+             // transaction created
+            const div = document.createElement("div");
+            div.classList.add("card", "border", "m-4", "shadow-lg");
+
+            // date
+            const d = new Date();
+            div.innerHTML = `
+                <div class="p-4">
+                <h3 class="card-title text-lg">Bonus added</h3>
+                <p>Bonus 20tk added. New balance ${totalAmount}.</p>
+                <p class="text-sm">${d.getMonth()}/${d.getDate()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}</p>
+                </div>
+                `
+            
+            const transactionDiv = document.getElementById("transaction-container");
+            transactionDiv.insertBefore(div, transactionDiv.children[0]);
         }else{
             alert("You don't have any coupun!")
         }
@@ -88,10 +165,32 @@ document.getElementById("pay-bill-submit-button")
     const pin = inputFieldValueById("pay-bill-pin");
     if(pin === 1234){
         const totalAmount = textFieldValueById("total-balance") ;
-        if(totalAmount>=amount){
-            document.getElementById("total-balance").innerText = totalAmount - amount;
+        
+        if(isNaN(amount)){
+            return alert("Please put valid amount");
         }else{
-            alert("You don't have sufficient amount!");
+            if(totalAmount>=amount){
+            document.getElementById("total-balance").innerText = totalAmount - amount;
+
+            // transaction created
+            const div = document.createElement("div");
+            div.classList.add("card", "border", "m-4", "shadow-lg");
+
+            // date
+            const d = new Date();
+            div.innerHTML = `
+                <div class="p-4">
+                <h3 class="card-title text-lg">Bill payed.</h3>
+                <p>${amount}tk transfered. New balance ${totalAmount-amount}.</p>
+                <p class="text-sm">${d.getMonth()}/${d.getDate()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}</p>
+                </div>
+                `
+            
+            const transactionDiv = document.getElementById("transaction-container");
+            transactionDiv.insertBefore(div, transactionDiv.children[0]);
+            }else{
+                alert("You don't have sufficient amount!");
+            }
         }
     }else{
         alert("Wrong pin number")
